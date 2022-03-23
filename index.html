@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        
+        @media (prefers-color-scheme: dark) {
+             body   { background:  #333; color: white; }
+             a {
+                 color: yellowgreen;
+             }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Random YouTube</h1>
+    <button onclick="roll('_blank')">Give me new one!</button>
+    <p>Hint, you can bookmark <a href="?auto">this link</a> to automatically go to random videos on YouTube!</p>
+    <script>
+        function roll(mode) {
+            var l = Math.trunc((Math.random() * 2) + 4);
+            var id = makeid(l);
+            var url = `https://www.google.com/search?hl=en-ID&source=hp&biw=&bih=&q=${encodeURIComponent(`${id} site:youtube.com`)}&btnI=I%27m+Feeling+Lucky&gbv=1`;
+            console.log(id)
+            window.open(url, mode).focus();
+        }
+
+        if (window.location.search.indexOf('auto') > -1) {
+            roll('_self');
+        }
+
+        function makeid(length) {
+            var result = '';
+            var characters = '_-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
+            }
+            return result;
+        }
+
+    </script>
+</body>
+
+</html>
