@@ -9,6 +9,10 @@
     <title>Random YouTube!</title>
     <meta name="title" content="Random YouTube!">
     <meta name="description" content="Watch some random YouTube video!">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
     <link rel="canonical" href="https://willnode.github.io/random-youtube/" />
 
     <!-- Open Graph / Facebook -->
@@ -32,10 +36,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 60vh;
+            min-height: calc(100vh - 16px);
         }
         button {
-            background-color: #4CAF50;
+            background-color: #27842b;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -47,7 +51,7 @@
             cursor: pointer;
         }
 
-        
+
         @media (prefers-color-scheme: dark) {
              body   { background:  #333; color: white; }
              a {
@@ -60,6 +64,8 @@
 
 <body>
     <h1>Random YouTube</h1>
+    <p>Watch some random YouTube video!</p>
+    <img src="./assets/android-chrome-192x192.png" height="128" alt="">
     <button onclick="roll('_blank')">Give me new one!</button>
     <p>Hint: you can bookmark <a href="?auto">this link</a> to automatically go to random videos on YouTube!</p>
     <p><a href="https://github.com/willnode/random-youtube"><img height="28" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/willnode/random-youtube?label=Star%20on%20GitHub&style=for-the-badge"></a></p>
