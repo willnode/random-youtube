@@ -70,11 +70,17 @@
     <p>Hint: you can bookmark <a href="?auto">this link</a> to automatically go to random videos on YouTube!</p>
     <p><a href="https://github.com/willnode/random-youtube"><img height="28" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/willnode/random-youtube?label=Star%20on%20GitHub&style=for-the-badge"></a></p>
     <script>
+        const youtubeId = 'srcf:H4sIAAAAAAAAAB3IQQqAMAxE0du4KXin6owl1DoQU4q3F7J7_1ze1_1dTYyqcZ82BGLIugp99ucC3nrQoinxOwSF71gUbyBxlMeqtLAAAA';
+
+        function composeYoutubeUrl (q) {
+            var eq = encodeURIComponent(`allinurl: ${q} watch`);
+            var es = encodeURIComponent(youtubeId);
+            return `https://www.google.com/search?source=hp&biw=&bih=&q=${eq}&tbs=${es}&btnI=I%27m+Feeling+Lucky&gbv=1&tbm=vid`
+        }
+
         function roll(mode) {
-            var l = Math.trunc((Math.random() * 2) + 4);
-            var id = makeid(l);
-            var url = `https://www.google.com/search?source=hp&biw=&bih=&q=${encodeURIComponent(`${id} site:youtube.com`)}&btnI=I%27m+Feeling+Lucky&gbv=1&tbm=vid`;
-            console.log(id)
+            var l = Math.trunc((Math.random() * 2) + 2);
+            var url = composeYoutubeUrl(makeid(l));
             window.open(url, mode).focus();
         }
 
