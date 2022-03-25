@@ -73,7 +73,7 @@
         function roll(mode) {
             var l = Math.trunc((Math.random() * 2) + 4);
             var id = makeid(l);
-            var url = `https://www.google.com/search?hl=en-ID&source=hp&biw=&bih=&q=${encodeURIComponent(`${id} site:youtube.com`)}&btnI=I%27m+Feeling+Lucky&gbv=1&tbm=vid`;
+            var url = `https://www.google.com/search?source=hp&biw=&bih=&q=${encodeURIComponent(`${id} site:youtube.com`)}&btnI=I%27m+Feeling+Lucky&gbv=1&tbm=vid`;
             console.log(id)
             window.open(url, mode).focus();
         }
