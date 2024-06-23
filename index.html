@@ -77,7 +77,7 @@
         const levelrandom = parseInt(params.get('levelrandom') || '2');
 
         function composeYoutubeUrl (q) {
-            var eq = encodeURIComponent(`allinurl: ${q} watch`);
+            var eq = encodeURIComponent(`allinurl: ${q} ?v=`);
             var es = encodeURIComponent(youtubeId);
             return `https://www.google.com/search?source=hp&biw=&bih=&q=${eq}&tbs=${es}&btnI=I%27m+Feeling+Lucky&gbv=1&tbm=vid`
         }
